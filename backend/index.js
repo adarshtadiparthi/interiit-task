@@ -2,6 +2,9 @@ const express = require('express');
 const mongoose = require('mongoose');
 const {importData,importItemsData,importGodowns}= require('./database');
 const app = express();
+const router = require('./routes/routes');
+
+app.use('/api', router);
 
 //mongodb connection
 const connectDB = async () => {
